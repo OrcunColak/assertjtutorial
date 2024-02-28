@@ -2,9 +2,11 @@ package exceptionmessage;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 
 /**
+ * See https://jsparrow.github.io/rules/replace-j-unit-expected-exception.html#tags
  * Easily replace the following JUnit code:
  * <pre>
  * {@code
@@ -22,6 +24,9 @@ class ExceptionMessageTest {
 
     @Test
     void when_noTimestamps_then_error() {
+		// It can also be 
+		// assertThrows(IOException.class, () -> ...);
+		
         assertThatThrownBy(this::process)
                 .hasMessageContaining("is missing a timestamp definition");
     }
