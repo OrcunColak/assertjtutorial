@@ -2,7 +2,7 @@ package customassert;
 
 import org.assertj.core.api.AbstractAssert;
 
-public class PersonAssert extends AbstractAssert<PersonAssert, Person> {
+class PersonAssert extends AbstractAssert<PersonAssert, Person> {
 
     // Constructor
     private PersonAssert(Person actual) {
@@ -13,8 +13,8 @@ public class PersonAssert extends AbstractAssert<PersonAssert, Person> {
     public PersonAssert hasName(String name) {
         isNotNull();
 
-        if (!actual.getName().equals(name)) {
-            failWithMessage("Expected person's name to be <%s> but was <%s>", name, actual.getName());
+        if (!actual.name().equals(name)) {
+            failWithMessage("Expected person's name to be <%s> but was <%s>", name, actual.name());
         }
 
         return this;
@@ -24,8 +24,8 @@ public class PersonAssert extends AbstractAssert<PersonAssert, Person> {
     public PersonAssert hasAge(int age) {
         isNotNull();
 
-        if (actual.getAge() != age) {
-            failWithMessage("Expected person's age to be <%s> but was <%s>", age, actual.getAge());
+        if (actual.age() != age) {
+            failWithMessage("Expected person's age to be <%s> but was <%s>", age, actual.age());
         }
 
         return this;

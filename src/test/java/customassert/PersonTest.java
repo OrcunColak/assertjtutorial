@@ -21,8 +21,8 @@ class PersonTest {
         Person jane = new Person("Jane", 30);
 
         // Use standard AssertJ assertions
-        assertThat(jane.getName()).isEqualTo("Jane");
-        assertThat(jane.getAge()).isEqualTo(30);
+        assertThat(jane.name()).isEqualTo("Jane");
+        assertThat(jane.age()).isEqualTo(30);
     }
 }
 
