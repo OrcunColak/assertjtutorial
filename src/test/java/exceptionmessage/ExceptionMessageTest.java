@@ -3,6 +3,7 @@ package exceptionmessage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /**
@@ -23,12 +24,22 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class ExceptionMessageTest {
 
     @Test
-    void when_noTimestamps_then_error() {
-		// It can also be 
-		// assertThrows(IOException.class, () -> ...);
-		
+    void assertThatThrownBy1() {
+        // It can also be
+        // assertThrows(IOException.class, () -> ...);
+
         assertThatThrownBy(this::process)
                 .hasMessageContaining("is missing a timestamp definition");
+    }
+
+    @Test
+    void assertThatThrownBy2() {
+        assertThatThrownBy(this::process)
+                .hasMessageContaining("is missing a timestamp definition");
+
+        // assertThatThrownBy does not stop the test. The statement below will fail the test
+        int result = 4;
+        assertEquals(5, result);
     }
 
     void process() {
