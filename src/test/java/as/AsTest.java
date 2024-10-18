@@ -7,9 +7,8 @@ import org.junit.jupiter.api.TestInfo;
 
 class AsTest {
 
-    /**
-     * This example shows how to use as() with parameters like String.format()
-     */
+
+    // This example shows how to use as() with parameters like String.format()
     @Test
     void testParameterizedMessage(TestInfo testInfo) {
         String actual = "Hello, World!";
